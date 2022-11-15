@@ -1,3 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.content-aqua {
+  @apply bg-aqua;
+  @apply text-black;
+}
+
+.content-candyAppleRed {
+  @apply bg-candyAppleRed;
+  @apply text-white;
+}
+
+.styled-list.horizontal {
+  @apply grid;
+  @apply grid-flow-col;
+}
+
+.styled-list > *.router-link-exact-active,
+.styled-list > *:hover {
+  @apply bg-aureolin;
+  @apply text-black;
+}
+
+.styled-list.horizontal.bordered::before {
+  content: '';
+  @apply bg-aqua;
+  @apply absolute;
+  @apply -inset-0.5;
+  clip-path: polygon(0 0, calc(100% - 20px) 0%, 100% 20px, 100% 100%, 20px 100%, 0% calc(100% - 20px));
+}
+
+.styled-list.bordered > * {
+  @apply flex;
+  align-items: center;
+  justify-content: center;
+  @apply bg-black;
+  @apply text-aqua;
+}
+
+.styled-list.bordered > *.router-link-exact-active,
+.styled-list.bordered > *:hover {
+  @apply bg-aqua;
+  @apply text-black;
+}
+
+.styled-list.horizontal > *:last-child {
+  clip-path: polygon(calc(100% - 20px) 0%, 100% 20px, 100% 100%, 0 100%, 0 0);
+}
+
+.styled-list.horizontal > *:first-child {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+}
+
+label:has(*:focus) > span {
+  @apply text-aureolin;
+}
+
+label > *:focus {
+  @apply border-aureolin;
+}
