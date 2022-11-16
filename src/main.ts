@@ -8,6 +8,8 @@ import router from './router'
 
 import './assets/main.css'
 import { DefaultApolloClient } from '@vue/apollo-composable'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import firebaseApp from './firebase'
 
 const app = createApp({
   setup() {

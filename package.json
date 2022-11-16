@@ -14,8 +14,10 @@
   "dependencies": {
     "@apollo/client": "^3.7.1",
     "@heroicons/vue": "^2.0.13",
+    "@types/node": "^18.11.9",
     "@vue/apollo-composable": "^4.0.0-beta.1",
     "autoprefixer": "^10.4.13",
+    "firebase": "^9.14.0",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
     "pinia": "^2.0.23",
@@ -27,7 +29,6 @@
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/jsdom": "^20.0.0",
-    "@types/node": "^16.11.68",
     "@vitejs/plugin-vue": "^3.1.2",
     "@vitejs/plugin-vue-jsx": "^2.0.1",
     "@vue/eslint-config-prettier": "^7.0.0",
