@@ -4,6 +4,7 @@ export const SKILLS_QUERY = gql`
   query {
     getAllSkills {
       id
+      category
       name
       iconUrl
     }
@@ -35,6 +36,7 @@ export const EXPERIENCES_QUERY = gql`
       }
       skills {
         id
+        category
         name
         iconUrl
       }

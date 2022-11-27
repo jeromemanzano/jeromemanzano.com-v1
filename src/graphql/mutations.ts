@@ -3,6 +3,7 @@ import gql from 'graphql-tag'
 //Skills mutations
 const SKILL_FRAGMENT = `{
   name
+  category
   id
   iconUrl
 }`

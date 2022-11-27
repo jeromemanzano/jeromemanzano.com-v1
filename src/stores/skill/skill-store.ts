@@ -26,11 +26,12 @@ export const useSkillStore = defineStore('skill', () => {
 
   const loading = queryLoading || updateLoading || createLoading || deleteLoading
 
-  function createSkill(name: string, iconUrl: string) {
+  function createSkill(name: string, category: string, iconUrl: string) {
     createSkillMutation({
       skill: {
         name,
         iconUrl,
+        category,
       },
     })
   }
@@ -41,6 +42,7 @@ export const useSkillStore = defineStore('skill', () => {
       skill: {
         name: skill.name,
         iconUrl: skill.iconUrl,
+        category: skill.category,
       },
     })
   }

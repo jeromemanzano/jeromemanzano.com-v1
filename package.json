@@ -13,6 +13,10 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-brands-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/vue-fontawesome": "latest-3",
     "@heroicons/vue": "^2.0.13",
     "@types/node": "^18.11.9",
     "@vue/apollo-composable": "^4.0.0-beta.1",
