@@ -1,7 +1,7 @@
 import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core'
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000/graphql',
+  uri: 'https://jerome-manzano-functions.netlify.app/api/graphql',
 })
 
 const cache = new InMemoryCache()
