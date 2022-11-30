@@ -2,61 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-.content-aqua {
-  @apply bg-aqua;
-  @apply text-black;
+@layer base {
+  :root {
+    --delay: 100ms;
+    --delay-offset: 100ms;
+  }
+
+  .html,
+  body {
+    height: 100%;
+    width: 100%;
+  }
+
+  section {
+    padding: 5%;
+    width: 100%;
+  }
+
+  section h2 {
+    @apply text-mainColor;
+    @apply font-bold;
+    @apply text-3xl;
+    @apply md:text-4xl;
+    @apply lg:text-5xl;
+    @apply xl:text-6xl;
+    @apply mb-10;
+    @apply from:opacity-0;
+    @apply from:translate-x-5;
+    @apply duration-500;
+    @apply delay-200;
+    @apply text-center;
+  }
 }
 
-.content-candyAppleRed {
-  @apply bg-candyAppleRed;
-  @apply text-white;
-}
+@layer components {
+  .staggered > *:nth-child(1) {
+    animation-delay: var(--delay);
+    transition-delay: var(--delay);
+  }
 
-.styled-list.horizontal {
-  @apply grid;
-  @apply grid-flow-col;
-}
+  .staggered > *:nth-child(2) {
+    animation-delay: calc(var(--delay) + (2 * var(--delay-offset)));
+    transition-delay: calc(var(--delay) + (2 * var(--delay-offset)));
+  }
 
-.styled-list > *.router-link-exact-active,
-.styled-list > *:hover {
-  @apply bg-aureolin;
-  @apply text-black;
-}
+  .staggered > *:nth-child(3) {
+    animation-delay: calc(var(--delay) + (3 * var(--delay-offset)));
+    transition-delay: calc(var(--delay) + (3 * var(--delay-offset)));
+  }
 
-.styled-list.horizontal.bordered::before {
-  content: '';
-  @apply bg-aqua;
-  @apply absolute;
-  @apply -inset-0.5;
-  clip-path: polygon(0 0, calc(100% - 20px) 0%, 100% 20px, 100% 100%, 20px 100%, 0% calc(100% - 20px));
-}
+  .staggered > *:nth-child(4) {
+    animation-delay: calc(var(--delay) + (4 * var(--delay-offset)));
+    transition-delay: calc(var(--delay) + (4 * var(--delay-offset)));
+  }
 
-.styled-list.bordered > * {
-  @apply flex;
-  align-items: center;
-  justify-content: center;
-  @apply bg-black;
-  @apply text-aqua;
-}
+  .staggered > *:nth-child(5) {
+    animation-delay: calc(var(--delay) + (5 * var(--delay-offset)));
+    transition-delay: calc(var(--delay) + (5 * var(--delay-offset)));
+  }
 
-.styled-list.bordered > *.router-link-exact-active,
-.styled-list.bordered > *:hover {
-  @apply bg-aqua;
-  @apply text-black;
-}
+  .staggered > *:nth-child(6) {
+    animation-delay: calc(var(--delay) + (6 * var(--delay-offset)));
+    transition-delay: calc(var(--delay) + (6 * var(--delay-offset)));
+  }
 
-.styled-list.horizontal > *:last-child {
-  clip-path: polygon(calc(100% - 20px) 0%, 100% 20px, 100% 100%, 0 100%, 0 0);
-}
+  .staggered > *:nth-child(7) {
+    animation-delay: calc(var(--delay) + (7 * var(--delay-offset)));
+    transition-delay: calc(var(--delay) + (7 * var(--delay-offset)));
+  }
 
-.styled-list.horizontal > *:first-child {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 calc(100% - 20px));
-}
-
-label:has(*:focus) > span {
-  @apply text-aureolin;
-}
-
-label > *:focus {
-  @apply border-aureolin;
+  .staggered > *:nth-child(8) {
+    animation-delay: calc(var(--delay) + (8 * var(--delay-offset)));
+    transition-delay: calc(var(--delay) + (8 * var(--delay-offset)));
+  }
 }
