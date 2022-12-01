@@ -33,6 +33,49 @@
     @apply delay-200;
     @apply text-center;
   }
+
+  .fill-hover:hover {
+    @apply border-activeBorderColor;
+  }
+
+  .fill-hover::before {
+    content: '';
+    @apply text-contentTextColor;
+  }
+
+  .fill-hover:not(.active)::before {
+    text-transform: uppercase;
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -ms-transition-duration: 0.5s;
+    transition-duration: 0.5s;
+
+    -webkit-clip-path: polygon(0 100%, -50% 100%, 0% 0, 0 0);
+    -moz-clip-path: polygon(0 100%, -50% 100%, 0% 0, 0 0);
+    -ms-clip-path: polygon(0 100%, -50% 100%, 0% 0, 0 0);
+    clip-path: polygon(0 100%, -50% 100%, 0% 0, 0 0);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    @apply bg-activeBorderColor;
+  }
+
+  .fill-hover:hover::before {
+    -webkit-clip-path: polygon(0 110%, 100% 100%, 150% 0, 0 0);
+    -moz-clip-path: polygon(0 110%, 100% 100%, 150% 0, 0 0);
+    -ms-clip-path: polygon(0 110%, 100% 100%, 150% 0, 0 0);
+    clip-path: polygon(0 110%, 100% 100%, 150% 0, 0 0);
+  }
 }
 
 @layer components {

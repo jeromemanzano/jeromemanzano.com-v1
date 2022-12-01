@@ -1,13 +1,13 @@
 <template>
-  <section>
+  <section class="flex flex-col justify-center">
     <h2
-      class="transition"
+      class="transition text-left"
       id="about-section"
     >
       About
     </h2>
     <div
-      class="text-2xl font-roboto text-secondaryTextColor transition from:opacity-0 duration-1000 delay-500 max-w-3xl mx-auto flex flex-col gap-5"
+      class="flex flex-col text-sm md:text-lg font-roboto text-secondaryTextColor transition from:opacity-0 from:translate-x-5 duration-1000 delay-500 max-w-3xl mx-auto gap-5"
     >
       <p>
         I&#39;m a software developer based in the Philippines. I work with agencies, startups, and businesses of all
@@ -24,13 +24,13 @@
         I&#39;m comfortable with a wide range of technologies, but here are some of the ones I&#39;ve used most
         recently:
       </p>
-      <ul class="grid grid-flow-row grid-cols-2 md:grid-cols-3 font-sans text-sm xs:text-lg sm:text-xl">
+      <ul class="flex flex-wrap font-sans text-lg md:text-3xl gap-2">
         <li
           v-for="(skill, index) in recentSkills"
           :key="index"
-          class="flex items-center gap-2 text-secondaryColor font-semibold"
+          class="flex items-center font-black uppercase"
         >
-          <CodeBracketIcon class="h-4 md:h-6" /> {{ skill }}
+          {{ skill }}
         </li>
       </ul>
     </div>
@@ -39,7 +39,6 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { CodeBracketIcon } from '@heroicons/vue/24/outline'
 
 //TODO: get from DB
 const careerStartDate = new Date(2011, 12)
@@ -64,4 +63,9 @@ const recentSkills = [
 ]
 </script>
 
-<style scoped></style>
+<style scoped>
+li:nth-child(even) {
+  color: transparent;
+  -webkit-text-stroke: 1px #cdcdcd;
+}
+</style>

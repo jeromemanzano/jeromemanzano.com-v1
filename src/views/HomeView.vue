@@ -1,134 +1,64 @@
 <template>
-  <menu class="hidden fixed md:flex justify-center w-28 z-50">
-    <nav class="absolute left-0 right-0 grid mt-10 ml-2 text-xs lg:text-lg gap-2">
-      <GlitchButton
-        text="About"
-        class="transition from:opacity-0 from:-translate-x-5 delay-[2000ms] duration-500"
-        :href="'#about-section'"
-        :active="currentSectionId === 'about-section'"
-      />
-      <GlitchButton
-        text="Experiences"
-        class="transition from:opacity-0 from:-translate-x-5 delay-[2100ms] duration-500"
-        :href="'#experiences-section'"
-        :active="currentSectionId === 'experiences-section'"
-      />
-      <GlitchButton
-        text="Contact"
-        class="transition from:opacity-0 from:-translate-x-5 delay-[2300ms] duration-500"
-        :href="'#contact-section'"
-        :active="currentSectionId === 'contact-section'"
-      />
-      <GlitchButton
-        text="Resume"
-        class="transition from:opacity-0 from:-translate-x-5 delay-[2400ms] duration-500"
-        :href="'/resume.pdf'"
-      />
+  <header class="block fixed top-0 left-0 w-full bg-mainBgColor z-10">
+    <nav>
+      <ol class="flex justify-end items-center uppercase p-4">
+        <li class="hidden sm:block transition from:opacity-0 from:translate-y-5 delay-[1s] duration-500">
+          <a
+            class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-mainBgColor p-3"
+            :href="'#about-section'"
+            :class="{ 'text-secondaryColor': currentSectionId === 'about-section' }"
+            >About</a
+          >
+        </li>
+        <li class="hidden sm:block transition from:opacity-0 from:translate-y-5 delay-[1.2s] duration-500 mr-2">
+          <a
+            class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-mainBgColor p-3"
+            :href="'#experiences-section'"
+            :class="{ 'text-secondaryColor': currentSectionId === 'experiences-section' }"
+            >Experience</a
+          >
+        </li>
+        <li class="overflow-hidden py-3 transition from:opacity-0 from:translate-y-5 delay-[1.4s] duration-500">
+          <a
+            class="border-[1px] border-borderColor px-9 py-3 fill-hover before:content-['Download']"
+            :href="'/resume.pdf'"
+            >CV</a
+          >
+        </li>
+      </ol>
     </nav>
-    <ul
-      v-if="currentSectionId !== 'contact-section'"
-      class="grid py-2 text-2xl gap-3 lg:gap-5 fixed h-100px bottom-[20%]"
-    >
-      <li class="transition from:-translate-x-5 from:opacity-0 delay-[2600ms] duration-500">
-        <a
-          :href="profile.linkedInUrl"
-          aria-label="LinkedIn"
-          rel="noopener noreferrer"
-          class="hover:drop-shadow-[-5px_0.5px_0_rgba(0,240,255,1)] text-textColor"
-          target="_blank"
-        >
-          <font-awesome-icon
-            icon="fa-brands fa-linkedin-in"
-            class="text-3xl lg:text-5xl hover:translate-x-0.5 hover:-translate-y-0.5"
-          />
-        </a>
-      </li>
-      <li class="transition from:-translate-x-5 from:opacity-0 delay-[2700ms] duration-500">
-        <a
-          :href="profile.githubUrl"
-          aria-label="Github"
-          rel="noopener noreferrer"
-          target="_blank"
-          class="hover:drop-shadow-[-5px_0.5px_0_rgba(0,240,255,1)] text-textColor"
-          ><font-awesome-icon
-            icon="fa-brands fa-github"
-            class="text-3xl 0 lg:text-5xl hover:translate-x-0.5 hover:-translate-y-0.5"
-        /></a>
-      </li>
-      <li class="transition from:-translate-x-5 from:opacity-0 delay-[2800ms] duration-500">
-        <a
-          :href="profile.emailUrl"
-          aria-label="Email"
-          rel="noopener noreferrer"
-          target="_blank"
-          class="hover:drop-shadow-[-5px_0.5px_0_rgba(0,240,255,1)] text-textColor"
-          ><font-awesome-icon
-            icon="fa-solid fa-envelope"
-            class="text-3xl lg:text-5xl hover:translate-x-0.5 hover:-translate-y-0.5"
-        /></a>
-      </li>
-    </ul>
-  </menu>
+  </header>
 
-  <div class="sm:mx-32">
+  <div class="sm:px-32 mx-auto">
     <WelcomeSection />
-    <AboutMeSection class="md:h-screen" />
+    <AboutMeSection class="min-h-screen" />
     <ExperiencesSection />
     <ContactSection />
   </div>
-  <footer class="bg-contentBgColor text-contentTextColor absolute bottom-0 left-0 right-0">
-    <ul class="flex py-2 justify-center text-2xl gap-2">
-      <li>
+
+  <footer
+    class="sm:flex-col sm:items-stretch sm:justify-end sm:bottom-[10%] sm:top-0 sm:fixed flex text-secondaryTextColor absolute left-0 transition from:opacity-0 from:-translate-x-5 duration-500 sm:delay-[1.6s] w-full sm:w-auto justify-center bottom-5"
+  >
+    <ul class="text-2xl flex sm:block">
+      <li class="sm:border-[1px] border-borderColor sm:hover:text-contentTextColor px-2 py-1 sm:mb-2 sm:fill-hover">
         <a
           :href="profile.linkedInUrl"
           aria-label="LinkedIn"
           rel="noopener noreferrer"
           target="_blank"
-          class="px-4 py-2 neon"
         >
-          <font-awesome-icon
-            icon="fa-solid fa-arrow-right"
-            class="hidden md:inline mr-2"
-          />
-
-          <span class="hidden md:inline uppercase">LinkedIn</span>
-          <font-awesome-icon
-            class="md:hidden"
-            icon=" fa-brands fa-linkedin-in"
-          />
+          <font-awesome-icon icon=" fa-brands fa-linkedin-in" />
         </a>
       </li>
-      <li>
+      <li class="sm:border-[1px] border-borderColor sm:hover:text-contentTextColor px-2 py-1 sm:fill-hover">
         <a
           :href="profile.githubUrl"
           aria-label="Github"
-          class="px-4 py-2 neon"
           rel="noopener noreferrer"
           target="_blank"
         >
-          <font-awesome-icon
-            icon="fa-solid fa-arrow-right"
-            class="hidden md:inline mr-2" />
-
-          <span class="hidden md:inline uppercase">Github</span>
-          <font-awesome-icon
-            class="md:hidden"
-            icon="fa-brands fa-github"
+          <font-awesome-icon icon="fa-brands fa-github"
         /></a>
-      </li>
-      <li>
-        <a
-          aria-label="Resume"
-          class="px-4 py-2 neon"
-          rel="noopener noreferrer"
-          target="_blank"
-          href="/resume.pdf"
-        >
-          <font-awesome-icon
-            icon="fa-solid fa-arrow-right"
-            class="mr-2 uppercase"
-          /><span class="uppercase">Resume</span></a
-        >
       </li>
     </ul>
   </footer>
@@ -139,7 +69,6 @@ import WelcomeSection from '@/components/home/WelcomeSection.vue'
 import ExperiencesSection from '@/components/home/ExperiencesSection.vue'
 import ContactSection from '@/components/home/ContactSection.vue'
 import AboutMeSection from '@/components/home/AboutMeSection.vue'
-import GlitchButton from '@/components/GlitchButton.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useProfileStore } from '@/stores/profile-store'
@@ -210,24 +139,3 @@ onUnmounted(() => {
   headerIntersectionObserver.disconnect()
 })
 </script>
-
-<style scoped>
-.neon:hover {
-  color: #fff;
-  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #00f0ff, 0 0 82px #00f0ff, 0 0 92px #00f0ff,
-    0 0 102px #00f0ff, 0 0 151px #00f0ff;
-  animation: pulsate 1.5s infinite alternate;
-}
-
-@keyframes pulsate {
-  100% {
-    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #00f0ff, 0 0 80px #00f0ff, 0 0 90px #00f0ff,
-      0 0 100px #00f0ff, 0 0 150px #00f0ff;
-  }
-
-  0% {
-    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #00f0ff, 0 0 45px #00f0ff, 0 0 55px #00f0ff,
-      0 0 70px #00f0ff, 0 0 80px #00f0ff;
-  }
-}
-</style>

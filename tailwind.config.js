@@ -16,8 +16,8 @@ module.exports = {
       'contentBgColor': '#FCEE0A',
       'contentTextColor': '#181818',
       'contentActiveBgColor': '#D40B05',
-      'borderColor': '#8B918F',
-      'activeBorderColor': '#FFFFFF',
+      'borderColor': '#CDCDCD',
+      'activeBorderColor': '#00F0FF',
 
     },
 
@@ -34,7 +34,6 @@ module.exports = {
   },
   plugins: [
     plugin(function({ addVariant }) {
-      addVariant('to', '&.to'),
       addVariant('from', '&.from'),
       addVariant('not-active', '&:not(.active)')
     })
