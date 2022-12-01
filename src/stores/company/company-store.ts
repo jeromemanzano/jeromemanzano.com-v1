@@ -54,6 +54,7 @@ export const useCompanyStore = defineStore('company', () => {
   }
 
   return {
+    queryLoading,
     loading,
     error,
     companies,

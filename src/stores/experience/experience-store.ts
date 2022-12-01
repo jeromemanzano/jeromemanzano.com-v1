@@ -68,6 +68,7 @@ export const useExperienceStore = defineStore('experience', () => {
   }
 
   return {
+    queryLoading,
     loading,
     error,
     experiences,

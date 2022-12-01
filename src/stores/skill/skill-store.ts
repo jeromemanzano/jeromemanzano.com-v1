@@ -52,6 +52,7 @@ export const useSkillStore = defineStore('skill', () => {
   }
 
   return {
+    queryLoading,
     loading,
     error,
     skills,
