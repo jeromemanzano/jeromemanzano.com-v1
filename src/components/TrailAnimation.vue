@@ -10,10 +10,10 @@
     }"
   >
     <li
-      v-for="(items, index) in trails"
+      v-for="(item, index) in trails"
       :key="index"
-      class="opacity-0 px-4 relative font-extrabold text-mainBgColor overflow-hidden last:overflow-visible [&:nth-child(1)]:md:hidden [&:nth-child(2)]:md:hidden [&:nth-child(3)]:lg:hidden"
-      :style="items.style"
+      class="opacity-0 px-4 relative font-extrabold text-mainBgColor overflow-hidden last:overflow-visible"
+      :style="item"
     >
       {{ text }}
     </li>
@@ -21,11 +21,11 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, computed } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const startAnimation = ref(false)
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     text: string
     placement?: string
@@ -34,41 +34,16 @@ const props = withDefaults(
     placement: 'bottom',
   }
 )
-
-const trails = computed(() => [
-  {
-    class: `${props.placement}-[90%] md:hidden`,
-    style: '-webkit-text-stroke: 1px #7acbc3',
-  },
-  {
-    class: `${props.placement}-[80%] md:hidden`,
-    style: '-webkit-text-stroke: 1px #7acbc3',
-  },
-  {
-    class: `${props.placement}-[70%] md:${props.placement}-[85%] lg:${props.placement}-[70%] xl:${props.placement}-[60%]`,
-    style: '-webkit-text-stroke: 1px #7acbc3',
-  },
-  {
-    class: `${props.placement}-[60%] md:${props.placement}-[70%] lg:${props.placement}-[60%] xl:${props.placement}-[50%]`,
-    style: '-webkit-text-stroke: 1px #7eafcd',
-  },
-  {
-    class: `${props.placement}-[45%] md:${props.placement}-[55%] lg:${props.placement}-[50%] xl:${props.placement}-[40%]`,
-    style: '-webkit-text-stroke: 1px #7eafcd',
-  },
-  {
-    class: `${props.placement}-[30%] md:${props.placement}-[40%] xl:${props.placement}-[30%]`,
-    style: '-webkit-text-stroke: 1px #99a4c9',
-  },
-  {
-    class: `${props.placement}-[15%] md:${props.placement}-[20%] xl:${props.placement}-[25%]`,
-    style: '-webkit-text-stroke: 1px #954b65',
-  },
-  {
-    class: `${props.placement}-0`,
-    style: '-webkit-text-stroke: 1px #954b65',
-  },
-])
+const trails = [
+  '-webkit-text-stroke: 1px #7acbc3',
+  '-webkit-text-stroke: 1px #7acbc3',
+  '-webkit-text-stroke: 1px #7acbc3',
+  '-webkit-text-stroke: 1px #7eafcd',
+  '-webkit-text-stroke: 1px #7eafcd',
+  '-webkit-text-stroke: 1px #99a4c9',
+  '-webkit-text-stroke: 1px #99a4c9',
+  '-webkit-text-stroke: 1px #954b65',
+]
 
 onMounted(() => {
   startAnimation.value = true
