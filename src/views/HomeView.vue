@@ -1,7 +1,7 @@
 <template>
   <header class="block fixed top-0 left-0 w-full bg-mainBgColor z-10">
     <nav>
-      <ol class="flex justify-end items-center uppercase p-4">
+      <ol class="flex justify-end items-center uppercase p-4 text-secondaryTextColor">
         <li class="hidden sm:block transition from:opacity-0 from:translate-y-5 delay-[1s] duration-500">
           <a
             class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-mainBgColor p-3"
@@ -20,8 +20,11 @@
         </li>
         <li class="overflow-hidden py-3 transition from:opacity-0 from:translate-y-5 delay-[1.4s] duration-500">
           <a
-            class="border-[1px] border-borderColor px-9 py-3 fill-hover before:content-['Download']"
+            class="border-[1px] border-borderColor text-textColor px-9 py-3 fill-hover before:content-['Download']"
             :href="'/resume.pdf'"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
             >CV</a
           >
         </li>
@@ -40,24 +43,31 @@
     class="sm:flex-col sm:items-stretch sm:justify-end sm:bottom-[10%] sm:top-0 sm:fixed flex text-secondaryTextColor absolute left-0 transition from:opacity-0 from:-translate-x-5 duration-500 sm:delay-[1.6s] w-full sm:w-auto justify-center bottom-5"
   >
     <ul class="text-2xl flex sm:block">
-      <li class="sm:border-[1px] border-borderColor sm:hover:text-contentTextColor px-2 py-1 sm:mb-2 sm:fill-hover">
+      <li class="sm:mb-5">
         <a
           :href="profile.linkedInUrl"
           aria-label="LinkedIn"
           rel="noopener noreferrer"
+          class="sm:border-[1px] border-borderColor sm:hover:text-contentTextColor p-2 sm:fill-hover"
           target="_blank"
         >
-          <font-awesome-icon icon=" fa-brands fa-linkedin-in" />
+          <font-awesome-icon
+            icon=" fa-brands fa-linkedin-in"
+            class="w-[24px] h-[24px]"
+          />
         </a>
       </li>
-      <li class="sm:border-[1px] border-borderColor sm:hover:text-contentTextColor px-2 py-1 sm:fill-hover">
+      <li>
         <a
           :href="profile.githubUrl"
           aria-label="Github"
           rel="noopener noreferrer"
+          class="sm:border-[1px] border-borderColor sm:hover:text-contentTextColor p-2 sm:fill-hover"
           target="_blank"
         >
-          <font-awesome-icon icon="fa-brands fa-github"
+          <font-awesome-icon
+            icon="fa-brands fa-github"
+            class="w-[24px] h-[24px]"
         /></a>
       </li>
     </ul>

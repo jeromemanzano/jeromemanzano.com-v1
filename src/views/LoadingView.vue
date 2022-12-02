@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-mainBgColor flex items-center justify-center text-mainColor text-4xl sm:text-6xl uppercase font-bold spac glitch"
+    class="bg-mainBgColor flex items-center justify-center text-mainColor text-4xl sm:text-6xl uppercase font-bold glitch"
   >
     Loading...
   </div>

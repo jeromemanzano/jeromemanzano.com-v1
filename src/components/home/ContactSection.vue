@@ -1,7 +1,7 @@
 <template>
   <section class="h-screen flex flex-col justify-center">
     <p
-      class="font-roboto transition from:opacity-0 from:translate-x-5 duration-500 max-w-3xl mx-auto text-xl md:text-2xl"
+      class="font-roboto text-secondaryTextColor transition from:opacity-0 from:translate-x-5 duration-500 max-w-3xl mx-auto text-xl md:text-2xl"
     >
       If you&#39;re looking for someone to help you build your vision, then please get in touch – I&#39;d love to hear
       from you!
