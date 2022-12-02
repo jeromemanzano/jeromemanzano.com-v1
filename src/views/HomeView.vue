@@ -20,12 +20,12 @@
         </li>
         <li class="overflow-hidden py-3 transition from:opacity-0 from:translate-y-5 delay-[1.4s] duration-500">
           <a
-            class="border-[1px] border-borderColor text-textColor px-9 py-3 fill-hover before:content-['Download']"
+            class="border-[1px] border-borderColor text-textColor px-4 py-2 fill-hover before:content-['Download']"
             :href="'/resume.pdf'"
             target="_blank"
             rel="noopener noreferrer"
             download
-            >CV</a
+            >Resume</a
           >
         </li>
       </ol>
