@@ -4,7 +4,6 @@ import { COMPANIES_QUERY } from '@/graphql/queries'
 import { CREATE_COMPANY_MUTATION, UPDATE_COMPANY_MUTATION, DELETE_COMPANY_MUTATION } from '@/graphql/mutations'
 import { useQuery, useMutation } from '@vue/apollo-composable'
 
-//TODO: handle errors
 export const useCompanyStore = defineStore('company', () => {
   const { result: companies, loading: queryLoading, error } = useQuery(COMPANIES_QUERY)
   const { mutate: updateCompanyMutation, loading: updateLoading } = useMutation(UPDATE_COMPANY_MUTATION)

@@ -6,6 +6,7 @@ import { useExperienceStore } from './stores/experience/experience-store'
 import { useCompanyStore } from './stores/company/company-store'
 import router from '@/router'
 import LoadingView from './views/LoadingView.vue'
+import ErrorView from './views/ErrorView.vue'
 
 const authStore = useAuthStore()
 const skillStore = useSkillStore()
@@ -26,8 +27,12 @@ async function logout() {
 
 <template>
   <LoadingView
-    class="absolute w-screen h-screen z-50"
+    class="absolute w-screen h-screen min-w-[320px]"
     v-if="skillStore.queryLoading || experienceStore.queryLoading || companyStore.queryLoading"
+  />
+  <ErrorView
+    v-else-if="skillStore.error || experienceStore.error || companyStore.error"
+    class="absolute w-screen h-screen min-w-[320px]"
   />
 
   <RouterView v-else />

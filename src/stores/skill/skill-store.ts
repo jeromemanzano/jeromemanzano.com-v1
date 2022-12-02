@@ -4,7 +4,6 @@ import { useMutation, useQuery } from '@vue/apollo-composable'
 import { SKILLS_QUERY } from '../../graphql/queries'
 import { CREATE_SKILL_MUTATION, DELETE_SKILL_MUTATION, UPDATE_SKILL_MUTATION } from '../../graphql/mutations'
 
-//TODO: handle errors
 export const useSkillStore = defineStore('skill', () => {
   const { result: skills, loading: queryLoading, error } = useQuery(SKILLS_QUERY)
   const { mutate: updateSkillMutation, loading: updateLoading } = useMutation(UPDATE_SKILL_MUTATION)

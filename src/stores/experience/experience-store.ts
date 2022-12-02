@@ -4,7 +4,6 @@ import { EXPERIENCES_QUERY } from '@/graphql/queries'
 import { CREATE_EXPERIENCE_MUTATION, UPDATE_EXPERIENCE_MUTATION, DELETE_EXPERIENCE_MUTATION } from '@/graphql/mutations'
 import { useQuery, useMutation } from '@vue/apollo-composable'
 
-//TODO: handle errors
 export const useExperienceStore = defineStore('experience', () => {
   const { result: experiences, loading: queryLoading, error } = useQuery(EXPERIENCES_QUERY)
   const { mutate: updateExperienceMutation, loading: updateLoading } = useMutation(UPDATE_EXPERIENCE_MUTATION)
