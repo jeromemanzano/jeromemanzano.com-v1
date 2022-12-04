@@ -3,9 +3,8 @@ import gql from 'graphql-tag'
 //Skills mutations
 const SKILL_FRAGMENT = `{
   name
-  category
+  isRecent
   id
-  iconUrl
 }`
 
 export const CREATE_SKILL_MUTATION = gql`

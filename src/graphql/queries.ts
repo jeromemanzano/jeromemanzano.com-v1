@@ -4,9 +4,8 @@ export const SKILLS_QUERY = gql`
   query {
     getAllSkills {
       id
-      category
+      isRecent
       name
-      iconUrl
     }
   }
 `
@@ -36,9 +35,8 @@ export const EXPERIENCES_QUERY = gql`
       }
       skills {
         id
-        category
         name
-        iconUrl
+        isRecent
       }
       position
       startDate
