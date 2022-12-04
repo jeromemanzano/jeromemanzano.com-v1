@@ -21,7 +21,7 @@
         <li class="overflow-hidden py-3 transition from:opacity-0 from:translate-y-5 delay-[1.4s] duration-500">
           <a
             class="border-[1px] border-borderColor text-textColor px-4 py-2 fill-hover before:content-['Download']"
-            :href="'/resume.pdf'"
+            :href="'https://www.jeromemanzano.com/resume.pdf'"
             target="_blank"
             rel="noopener noreferrer"
             download
@@ -69,7 +69,7 @@
       /></a>
     </li>
   </ul>
-  <footer class="flex text-center justify-center absolute left-0 right-0 bottom-0">
+  <footer class="flex text-center justify-center absolute left-0 right-0 bottom-0 text-secondaryTextColor">
     <a
       href="https://github.com/jeromemanzano/jerome-manzano-website"
       aria-label="Website repository"
