@@ -30,7 +30,7 @@
           :key="index"
           class="flex items-center font-black uppercase"
         >
-          {{ skill }}
+          {{ skill.name }}
         </li>
       </ul>
     </div>
@@ -39,6 +39,8 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useSkillStore } from '@/stores/skill/skill-store'
+import type { ISkillModel } from '@/stores/skill/skill-model'
 
 //TODO: get from DB
 const careerStartDate = new Date(2011, 12)
@@ -47,20 +49,7 @@ const experienceLengthInYears = computed(() => {
   return new Date().getFullYear() - careerStartDate.getFullYear()
 })
 
-const recentSkills = [
-  'C#',
-  'Avalonia UI',
-  '.NET MAUI',
-  'Xamarin',
-  'Uno Platform',
-  'Vue.js',
-  'Node.js',
-  'Capacitor',
-  'TypeScript',
-  'JavaScript',
-  'TailwindCSS',
-  'MongoDB',
-]
+const recentSkills = useSkillStore().skills?.getAllSkills.filter((skill: ISkillModel) => skill.isRecent)
 </script>
 
 <style scoped>
