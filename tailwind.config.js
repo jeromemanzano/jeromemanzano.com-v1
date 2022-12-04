@@ -4,39 +4,37 @@ const plugin = require('tailwindcss/plugin')
 module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
-    colors:{
+    colors: {
       transparent: 'transparent',
       currentColor: 'currentColor',
-      'mainColor': '#FCEE0A',
-      'secondaryColor': '#00F0FF',
-      'mainBgColor': '#181818',
-      'textColor': '#FFFFFF',
-      'textActiveColor': '#FCEE0A',
-      'secondaryTextColor': '#CDCDCD',
-      'contentBgColor': '#FCEE0A',
-      'contentTextColor': '#181818',
-      'contentActiveBgColor': '#D40B05',
-      'borderColor': '#CDCDCD',
-      'activeBorderColor': '#00F0FF',
-
+      mainColor: '#FCEE0A',
+      secondaryColor: '#00F0FF',
+      mainBgColor: '#181818',
+      textColor: '#FFFFFF',
+      textActiveColor: '#FCEE0A',
+      secondaryTextColor: '#CDCDCD',
+      contentBgColor: '#FCEE0A',
+      contentTextColor: '#181818',
+      contentActiveBgColor: '#D40B05',
+      borderColor: '#CDCDCD',
+      activeBorderColor: '#00F0FF',
     },
 
     extend: {
       fontFamily: {
-        'sans': ['Raleway', ...defaultTheme.fontFamily.sans],
-        'roboto': ['Roboto', ...defaultTheme.fontFamily.sans]
+        sans: ['Raleway', ...defaultTheme.fontFamily.sans],
+        roboto: ['Roboto', ...defaultTheme.fontFamily.sans],
       },
-      screens : {
-        'xs' : '420px',
+      screens: {
+        xs: '420px',
         ...defaultTheme.screens,
-      }
+      },
     },
   },
   plugins: [
-    plugin(function({ addVariant }) {
-      addVariant('from', '&.from'),
-      addVariant('not-active', '&:not(.active)')
-    })
+    plugin(function ({ addVariant }) {
+      addVariant('from', '&.from')
+    }),
   ],
 }
 
@@ -58,4 +56,3 @@ module.exports = {
 // 'steelPink': '#CB1DCD',
 // 'frostBite': '#E455AE',
 // 'blushingPurple': '#9370DB'
-
