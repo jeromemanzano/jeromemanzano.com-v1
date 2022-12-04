@@ -1,52 +1,23 @@
-# jerome-manzano-website
+# jeromemanzano.com v1
 
-This template should help get you started developing with Vue 3 in Vite.
+Welcome to the first version of my website [jeromemanzano.com](https://www.jeromemanzano.com). This is built using `Vite` and hosted in `Netlify`
 
-## Recommended IDE Setup
+PS: This is a work in progress so you'll notice a few things missing and a lot of `TODO` comments here and there.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Setup
 
-## Type Support for `.vue` Imports in TS
+1. Install all dependecies
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
+```
 yarn
 ```
 
-### Compile and Hot-Reload for Development
+2. Run locally
 
-```sh
+```
 yarn dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## Backend
 
-```sh
-yarn build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-yarn test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-yarn lint
-```
+As you have probably seen, this connects to an api to retrieve some of the information displayed (I know it seems like overkill, but I have reasons for doing so). The backend repository is currently private. I'll change it to public once I have configured some security features.

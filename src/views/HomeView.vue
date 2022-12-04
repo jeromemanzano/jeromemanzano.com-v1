@@ -38,39 +38,47 @@
     <ExperiencesSection />
     <ContactSection />
   </div>
-
-  <footer
-    class="sm:flex-col sm:items-stretch sm:justify-end sm:bottom-[10%] sm:top-0 sm:fixed flex text-secondaryTextColor absolute left-0 transition from:opacity-0 from:-translate-x-5 duration-500 sm:delay-[1.6s] w-full sm:w-auto justify-center bottom-5"
+  <ul
+    class="text-2xl sm:flex-col sm:items-stretch sm:justify-end sm:bottom-[10%] sm:top-0 sm:fixed flex text-secondaryTextColor absolute left-0 transition from:opacity-0 from:-translate-x-5 duration-500 sm:delay-[1.6s] w-full sm:w-auto justify-center bottom-12"
   >
-    <ul class="text-2xl flex sm:block">
-      <li class="sm:mb-5">
-        <a
-          :href="profile.linkedInUrl"
-          aria-label="LinkedIn"
-          rel="noopener noreferrer"
-          class="sm:border-[1px] border-borderColor sm:hover:text-contentTextColor p-2 sm:fill-hover"
-          target="_blank"
-        >
-          <font-awesome-icon
-            icon=" fa-brands fa-linkedin-in"
-            class="w-[24px] h-[24px]"
-          />
-        </a>
-      </li>
-      <li>
-        <a
-          :href="profile.githubUrl"
-          aria-label="Github"
-          rel="noopener noreferrer"
-          class="sm:border-[1px] border-borderColor sm:hover:text-contentTextColor p-2 sm:fill-hover"
-          target="_blank"
-        >
-          <font-awesome-icon
-            icon="fa-brands fa-github"
-            class="w-[24px] h-[24px]"
-        /></a>
-      </li>
-    </ul>
+    <li class="sm:mb-5">
+      <a
+        :href="profile.linkedInUrl"
+        aria-label="LinkedIn"
+        rel="noopener noreferrer"
+        class="sm:border-[1px] border-borderColor sm:hover:text-contentTextColor p-2 sm:fill-hover"
+        target="_blank"
+      >
+        <font-awesome-icon
+          icon=" fa-brands fa-linkedin-in"
+          class="w-[24px] h-[24px]"
+        />
+      </a>
+    </li>
+    <li>
+      <a
+        :href="profile.githubUrl"
+        aria-label="Github"
+        rel="noopener noreferrer"
+        class="sm:border-[1px] border-borderColor sm:hover:text-contentTextColor p-2 sm:fill-hover"
+        target="_blank"
+      >
+        <font-awesome-icon
+          icon="fa-brands fa-github"
+          class="w-[24px] h-[24px]"
+      /></a>
+    </li>
+  </ul>
+  <footer class="flex text-center justify-center absolute left-0 right-0 bottom-0">
+    <a
+      href="https://github.com/jeromemanzano/jerome-manzano-website"
+      aria-label="Website repository"
+      rel="noopener noreferrer"
+      target="_blank"
+      class="py-4 uppercase"
+    >
+      jeromemanzano.com v1
+    </a>
   </footer>
 </template>
 
