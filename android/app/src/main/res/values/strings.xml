@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">jeromemanzano.com</string>
+    <string name="title_activity_main">jeromemanzano.com</string>
+    <string name="package_name">com.jeromemanzano</string>
+    <string name="custom_url_scheme">com.jeromemanzano</string>
+</resources>

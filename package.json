@@ -9,10 +9,18 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write \"**/*.{js,ts,vue,scss,html}\""
+    "format": "prettier --write \"**/*.{js,ts,vue,scss,html}\"",
+    "run:android": "yarn build && cap sync && cap run android",
+    "open:android": "yarn build && cap sync && cap open android",
+    "run:ios": "yarn build && cap sync && cap run ios",
+    "open:ios": "yarn build && cap sync && cap open ios"
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",
+    "@capacitor/android": "^4.6.0",
+    "@capacitor/cli": "^4.6.0",
+    "@capacitor/core": "^4.6.0",
+    "@capacitor/ios": "^4.6.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
