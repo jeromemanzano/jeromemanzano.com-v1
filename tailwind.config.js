@@ -35,6 +35,7 @@ module.exports = {
     plugin(function ({ addVariant }) {
       addVariant('from', '&.from')
     }),
+    require('@tailwindcss/forms'),
   ],
 }
 
