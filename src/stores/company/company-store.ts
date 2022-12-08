@@ -25,13 +25,13 @@ export const useCompanyStore = defineStore('company', () => {
 
   const loading = queryLoading || updateLoading || createLoading || deleteLoading
 
-  function createCompany(name: string, website: string, address: string, description: string) {
+  function createCompany(company: ICompanyModel) {
     createCompanyMutation({
       company: {
-        name,
-        website,
-        address,
-        description,
+        name: company.name,
+        website: company.website,
+        address: company.address,
+        description: company.description,
       },
     })
   }

@@ -28,22 +28,15 @@ export const useExperienceStore = defineStore('experience', () => {
 
   const loading = queryLoading || updateLoading || createLoading || deleteLoading
 
-  function createExperience(
-    position: string,
-    roles: string[],
-    startDate: string,
-    endDate: string,
-    companyId: string,
-    skillIds: string[]
-  ) {
+  function createExperience(experience: IExperienceModel) {
     createExperienceMutation({
       experience: {
-        position,
-        roles,
-        startDate,
-        endDate,
-        companyId,
-        skillIds,
+        position: experience.position,
+        roles: experience.roles,
+        startDate: experience.startDate,
+        endDate: experience.endDate,
+        companyId: experience.company.id,
+        skillIds: experience.skills?.map(skill => skill.id) ?? [],
       },
     })
   }

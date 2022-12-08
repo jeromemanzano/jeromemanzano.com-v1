@@ -1,32 +1,36 @@
 <template>
   <form
     @submit.prevent="updateSkill()"
-    class="grid grid-cols-2 md:grid-cols-6 gap-2"
+    class="grid grid-cols-2 md:grid-cols-4 gap-2"
   >
     <input-field
       label="Name"
-      v-model="name"
-      class="col-span-2"
-    />
-    <input-field
-      label="Icon URL"
-      v-model="iconUrl"
+      v-model="skill.name"
       class="col-span-2"
     />
 
+    <label class="col-span-2 sm:order-last">
+      <input
+        id="isRecent"
+        v-model="skill.isRecent"
+        type="checkbox"
+      />
+
+      Recent</label
+    >
     <div
       v-if="skill.id"
-      class="col-span-2 styled-list horizontal gap-3"
+      class="contents"
     >
       <button
         type="submit"
-        class="content-aqua py-2 mt-2 md:mt-6"
+        class="py-2 mt-2 md:mt-6 fill-hover"
       >
         UPDATE
       </button>
       <button
         type="button"
-        class="content-candyAppleRed py-2 mt-2 md:mt-6"
+        class="py-2 mt-2 md:mt-6 fill-hover"
         @click="deleteSkill()"
       >
         DELETE
@@ -34,11 +38,11 @@
     </div>
     <div
       v-else
-      class="contents styled-list horizontal"
+      class="contents"
     >
       <button
         type="button"
-        class="content-aqua py-2 mt-2 md:mt-6"
+        class="py-2 mt-2 md:mt-6 fill-hover"
         @click="createSkill()"
       >
         CREATE
@@ -49,7 +53,7 @@
 
 <script setup lang="ts">
 import type { ISkillModel } from '@/stores/skill/skill-model'
-import { ref } from 'vue'
+import { reactive } from 'vue'
 import { useSkillStore } from '@/stores/skill/skill-store'
 import InputField from '../InputField.vue'
 
@@ -57,16 +61,15 @@ const props = defineProps<{
   skill: ISkillModel
 }>()
 
-const name = ref(props.skill.name ?? '')
-const iconUrl = ref(props.skill.iconUrl)
+const skill = reactive(Object.assign({}, props.skill))
 
 const skillStore = useSkillStore()
 
 function createSkill() {
-  skillStore.createSkill(name.value, iconUrl.value)
+  skillStore.createSkill(skill)
   skillStore.onCreateSkillDone(() => {
-    name.value = ''
-    iconUrl.value = ''
+    skill.name = ''
+    skill.isRecent = false
   })
 }
 
@@ -77,8 +80,8 @@ function deleteSkill() {
 function updateSkill() {
   skillStore.updateSkill({
     id: props.skill.id,
-    name: name.value,
-    iconUrl: iconUrl.value,
+    name: skill.name,
+    isRecent: skill.isRecent,
   })
 }
 </script>

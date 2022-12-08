@@ -6,7 +6,10 @@
     v-else-if="skillStore.skills"
     class="grid gap-6 md:gap-4"
   >
-    <SkillEditListItem :skill="newSkill" />
+    <SkillEditListItem
+      :skill="newSkill"
+      v-if="useAuthStore().isLoggedIn"
+    />
     <SkillEditListItem
       v-for="(skill, index) in skillStore.skills.getAllSkills"
       :skill="skill"
@@ -19,6 +22,7 @@
 import SkillEditListItem from './SkillEditListItem.vue'
 import type { ISkillModel } from '@/stores/skill/skill-model'
 import { useSkillStore } from '@/stores/skill/skill-store'
+import { useAuthStore } from '@/stores/auth-store'
 
 const newSkill = {} as ISkillModel
 const skillStore = useSkillStore()

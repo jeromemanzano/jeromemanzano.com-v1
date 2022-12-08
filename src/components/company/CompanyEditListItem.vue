@@ -5,33 +5,33 @@
   >
     <input-field
       label="Name"
-      v-model="name"
+      v-model="company.name"
     />
     <input-field
       label="Website"
-      v-model="website"
+      v-model="company.website"
     />
     <input-field
       label="Description"
-      v-model="description"
+      v-model="company.description"
     />
     <input-field
       label="Address"
-      v-model="address"
+      v-model="company.address"
     />
     <div
       v-if="company.id"
-      class="col-span-2 styled-list horizontal gap-3"
+      class="contents"
     >
       <button
         type="submit"
-        class="content-aqua py-2 mt-2 md:mt-6"
+        class="fill-hover mt-2 md:mt-6"
       >
         UPDATE
       </button>
       <button
         type="button"
-        class="content-candyAppleRed py-2 mt-2 md:mt-6"
+        class="fill-hover mt-2 md:mt-6"
         @click="deleteCompany()"
       >
         DELETE
@@ -39,11 +39,11 @@
     </div>
     <div
       v-else
-      class="contents styled-list horizontal"
+      class="contents"
     >
       <button
         type="button"
-        class="content-aqua py-2 mt-2 md:mt-6"
+        class="fill-hover mt-2 md:mt-6"
         @click="createCompany()"
       >
         CREATE
@@ -55,27 +55,24 @@
 <script setup lang="ts">
 import type { ICompanyModel } from '@/stores/company/company-model'
 import { useCompanyStore } from '@/stores/company/company-store'
-import { ref } from 'vue'
+import { reactive } from 'vue'
 import InputField from '../InputField.vue'
 
 const props = defineProps<{
   company: ICompanyModel
 }>()
 
-const name = ref(props.company.name)
-const website = ref(props.company.website)
-const address = ref(props.company.address)
-const description = ref(props.company.description)
+const company = reactive(Object.assign({}, props.company))
 const companyStore = useCompanyStore()
 
 function createCompany() {
-  companyStore.createCompany(name.value, website.value, address.value, description.value)
   companyStore.onCreateCompanyDone(() => {
-    name.value = ''
-    website.value = ''
-    address.value = ''
-    description.value = ''
+    company.name = ''
+    company.website = ''
+    company.address = ''
+    company.description = ''
   })
+  companyStore.createCompany(company)
 }
 
 function deleteCompany() {
@@ -83,13 +80,7 @@ function deleteCompany() {
 }
 
 function updateCompany() {
-  companyStore.updateCompany({
-    id: props.company.id,
-    name: name.value,
-    website: website.value,
-    address: address.value,
-    description: description.value,
-  })
+  companyStore.updateCompany(company)
 }
 </script>
 

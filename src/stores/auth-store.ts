@@ -1,12 +1,4 @@
-import {
-  type User,
-  type UserCredential,
-  getAuth,
-  onAuthStateChanged,
-  signInWithPopup,
-  GoogleAuthProvider,
-  signOut,
-} from 'firebase/auth'
+import { type User, getAuth, signInWithPopup, GoogleAuthProvider, signOut } from 'firebase/auth'
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
@@ -15,40 +7,19 @@ export const useAuthStore = defineStore('auth', () => {
   const user = ref<User | null>(null)
   const isLoggedIn = computed(() => user.value)
 
-  async function init() {
-    if (!user.value) user.value = await getCurrentUser()
-  }
+  getAuth().onAuthStateChanged(currentUser => {
+    console.log('onAuthStateChanged')
+    user.value = currentUser
+  })
 
-  const getCurrentUser = () => {
-    return new Promise<User | null>((resolve, reject) => {
-      const removeListener = onAuthStateChanged(
-        getAuth(),
-        (user: User | null) => {
-          removeListener()
-          resolve(user)
-        },
-        reject
-      )
-    })
-  }
-
-  async function login(): Promise<UserCredential | undefined> {
+  async function login() {
     const provider = new GoogleAuthProvider()
-    try {
-      return await signInWithPopup(auth, provider)
-    } catch (error) {
-      //TODO: handle error
-    }
+    await signInWithPopup(auth, provider)
   }
 
   async function logout() {
-    try {
-      await signOut(auth)
-      user.value = null
-    } catch (error) {
-      //TODO: handle error
-    }
+    await signOut(auth)
   }
 
-  return { user, isLoggedIn, init, login, logout }
+  return { user, isLoggedIn, login, logout }
 })

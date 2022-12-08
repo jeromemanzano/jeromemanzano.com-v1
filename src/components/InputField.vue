@@ -1,11 +1,10 @@
 <template>
   <label class="flex flex-col">
-    <span class="text-aqua">{{ label }}</span>
+    <span class="text-textColor">{{ label }}</span>
     <input
       :type="type"
       :value="modelValue"
       @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
-      class="bg-[#001518] text-white border-2 border-aqua p-2 outline-0"
     />
   </label>
 </template>
