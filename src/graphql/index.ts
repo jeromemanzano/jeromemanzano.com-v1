@@ -1,7 +1,22 @@
 import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core'
+import { getToken } from '../firebase'
+
+async function getHeaders() {
+  const headers: { Authorization?: string; 'Content-Type'?: string } = {}
+  const token = await getToken()
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`
+  }
+  headers['Content-Type'] = 'application/json'
+  return headers
+}
 
 const httpLink = createHttpLink({
-  uri: 'https://jerome-manzano-functions.netlify.app/api/graphql',
+  uri: '/api/graphql',
+  fetch: async (uri: RequestInfo, options: RequestInit) => {
+    options.headers = await getHeaders()
+    return fetch(uri, options)
+  },
 })
 
 const cache = new InMemoryCache()

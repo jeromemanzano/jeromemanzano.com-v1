@@ -9,13 +9,14 @@ import router from './router'
 import './assets/main.css'
 import { DefaultApolloClient } from '@vue/apollo-composable'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faEnvelope, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import firebaseApp from './firebase'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faEnvelope, faLinkedinIn, faGithub, faArrowRight)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import {} from './firebase'
+
+library.add(faLinkedinIn, faGithub, faUser)
 const app = createApp({
   setup() {
     provide(DefaultApolloClient, apolloClient)
