@@ -31,6 +31,7 @@
     "@types/node": "^18.11.9",
     "@vendia/serverless-express": "^4.10.1",
     "@vue/apollo-composable": "^4.0.0-beta.1",
+    "@vueuse/core": "^9.6.0",
     "autoprefixer": "^10.4.13",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
