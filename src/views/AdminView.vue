@@ -44,24 +44,32 @@
       </ol>
     </nav>
 
-    <FirebaseView
+    <modal-component
+      class="mx-2 p-5 bg-secondaryTextColor text-contentTextColor"
       v-show="showLogin"
-      class="flex-none mx-2 p-9 bg-secondaryTextColor text-contentTextColor"
-    />
+      @close="showLogin = false"
+    >
+      <template v-slot:body>
+        <admin-login
+          @close="showLogin = false"
+          class="flex-none"
+        />
+      </template>
+    </modal-component>
   </header>
 
   <router-view class="sm:px-20 mx-auto mt-32"></router-view>
 </template>
 
 <script setup lang="ts">
-import FirebaseView from '@/components/AdminLogin.vue'
+import ModalComponent from '@/components/ModalComponent.vue'
+import AdminLogin from '@/components/AdminLogin.vue'
 import { useAuthStore } from '@/stores/auth-store'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { ref } from 'vue'
 
 const authStore = useAuthStore()
 
-// TODO: close when click outside of element
 const showLogin = ref(false)
 </script>
 

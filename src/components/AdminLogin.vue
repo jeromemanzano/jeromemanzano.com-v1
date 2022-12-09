@@ -25,15 +25,22 @@
 import { useAuthStore } from '@/stores/auth-store'
 
 const authStore = useAuthStore()
+const emits = defineEmits(['close'])
 
 function login() {
-  authStore.login().catch(error => {
-    console.error(error)
-    //TODO: show error message
-  })
+  authStore
+    .login()
+    .then(() => emits('close'))
+    .catch(error => {
+      console.error(error)
+      //TODO: show error message
+    })
 }
 
 function logout() {
-  authStore.logout().catch(error => console.error(error))
+  authStore
+    .logout()
+    .then(() => emits('close'))
+    .catch(error => console.error(error))
 }
 </script>
