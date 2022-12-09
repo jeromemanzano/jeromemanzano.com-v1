@@ -1,17 +1,20 @@
 <template>
   <div
     v-if="authStore.isLoggedIn"
-    class="font-roboto flex flex-col gap-5"
+    class="font-roboto flex flex-col gap-5 text-center"
   >
     Logged in as {{ authStore.user?.displayName }}
     <button
       @click="logout()"
-      class="block fill-hover px-6 py-4 border-[1px] border-mainBgColor"
+      class="block fill-hover px-6 py-4 border-[1px] border-mainBgColor hover:text-secondaryColor"
     >
       Sign out
     </button>
   </div>
-  <div v-else>
+  <div
+    v-else
+    class="font-roboto flex flex-col gap-5"
+  >
     <button
       @click="login()"
       class="fill-hover px-6 py-4 border-[1px] border-mainBgColor"

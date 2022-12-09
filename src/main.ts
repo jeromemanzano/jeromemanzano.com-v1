@@ -11,12 +11,12 @@ import { DefaultApolloClient } from '@vue/apollo-composable'
 import { library } from '@fortawesome/fontawesome-svg-core'
 
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faBars } from '@fortawesome/free-solid-svg-icons'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {} from './firebase'
 
-library.add(faLinkedinIn, faGithub, faUser)
+library.add(faLinkedinIn, faGithub, faUser, faBars)
 const app = createApp({
   setup() {
     provide(DefaultApolloClient, apolloClient)
