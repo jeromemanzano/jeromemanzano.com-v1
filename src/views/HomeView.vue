@@ -1,34 +1,60 @@
 <template>
   <header class="block fixed top-0 left-0 w-full bg-mainBgColor z-10">
-    <nav>
-      <ol class="flex justify-end items-center uppercase p-4 text-secondaryTextColor">
-        <li class="hidden sm:block transition from:opacity-0 from:translate-y-5 delay-[1s] duration-500">
-          <a
-            class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-mainBgColor p-3"
-            :href="'#about-section'"
-            :class="{ 'text-secondaryColor': currentSectionId === 'about-section' }"
-            >About</a
-          >
-        </li>
-        <li class="hidden sm:block transition from:opacity-0 from:translate-y-5 delay-[1.2s] duration-500 mr-2">
-          <a
-            class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-mainBgColor p-3"
-            :href="'#experiences-section'"
-            :class="{ 'text-secondaryColor': currentSectionId === 'experiences-section' }"
-            >Experience</a
-          >
-        </li>
-        <li class="overflow-hidden py-3 transition from:opacity-0 from:translate-y-5 delay-[1.4s] duration-500">
-          <a
-            class="border-[1px] border-borderColor text-textColor px-4 py-2 fill-hover before:content-['Download']"
-            :href="'https://www.jeromemanzano.com/resume.pdf'"
-            target="_blank"
-            rel="noopener noreferrer"
-            download
-            >Resume</a
-          >
-        </li>
-      </ol>
+    <nav class="flex justify-end">
+      <button
+        class="sm:hidden p-4 self-end justify-end content-end items-end justify-items-end place-self-end"
+        @click="showMenu = true"
+      >
+        <font-awesome-icon
+          icon="fa-solid fa-bars"
+          class="h-7 w-7"
+        />
+      </button>
+      <Teleport
+        to="#sideMenu"
+        :disabled="isDesktop"
+      >
+        <navigation-menu
+          v-show="showMenu || isDesktop"
+          @close="showMenu = false"
+          class="flex shrink-0"
+        >
+          <template v-slot:body>
+            <ol
+              class="flex flex-col justify-center gap-6 sm:gap-0 sm:flex-row sm:justify-end sm:items-center uppercase p-8 sm:p-4 text-secondaryTextColor"
+            >
+              <li class="block sm:transition from:opacity-0 from:translate-y-5 delay-[1s] duration-500">
+                <a
+                  class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-transparent py-3 sm:p-3"
+                  :href="'#about-section'"
+                  :class="{ 'text-secondaryColor': currentSectionId === 'about-section' }"
+                  >About</a
+                >
+              </li>
+              <li class="block sm:transition from:opacity-0 from:translate-y-5 delay-[1.2s] duration-500 mr-2">
+                <a
+                  class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-transparent py-3 sm:p-3"
+                  :href="'#experiences-section'"
+                  :class="{ 'text-secondaryColor': currentSectionId === 'experiences-section' }"
+                  >Experience</a
+                >
+              </li>
+              <li
+                class="overflow-hidden py-3 sm:transition from:opacity-0 from:translate-y-5 delay-[1.4s] duration-500"
+              >
+                <a
+                  class="border-[1px] border-borderColor text-textColor px-4 py-2 fill-hover before:content-['Download']"
+                  :href="'https://www.jeromemanzano.com/resume.pdf'"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                  >Resume</a
+                >
+              </li>
+            </ol>
+          </template>
+        </navigation-menu>
+      </Teleport>
     </nav>
   </header>
 
@@ -90,6 +116,12 @@ import AboutMeSection from '@/components/home/AboutMeSection.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useProfileStore } from '@/stores/profile-store'
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
+import NavigationMenu from '@/components/NavigationMenu.vue'
+
+const breakpoints = useBreakpoints(breakpointsTailwind)
+const isDesktop = breakpoints.greater('sm')
+const showMenu = ref(false)
 
 const profile = useProfileStore()
 const from = 'from'

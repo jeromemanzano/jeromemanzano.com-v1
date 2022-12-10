@@ -24,28 +24,28 @@
             <ol
               class="flex flex-col sm:flex-none gap-6 sm:flex-row items-start sm:items-center justify-center uppercase py-4 text-secondaryTextColor"
             >
-              <li class="block transition from:opacity-0 from:translate-y-5 delay-[1s] duration-500">
+              <li class="block">
                 <a
                   class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-transparent p-3"
                   href="/"
                   >Home</a
                 >
               </li>
-              <li class="block transition from:opacity-0 from:translate-y-5 delay-[1s] duration-500">
+              <li class="block">
                 <router-link
                   class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-transparent p-3"
                   to="/admin/skills"
                   >Skills</router-link
                 >
               </li>
-              <li class="block transition from:opacity-0 from:translate-y-5 delay-[1.2s] duration-500 mr-2">
+              <li class="block">
                 <router-link
                   class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-transparent p-3"
                   to="/admin/companies"
                   >Companies</router-link
                 >
               </li>
-              <li class="block transition from:opacity-0 from:translate-y-5 delay-[1.2s] duration-500 mr-2">
+              <li class="block sm:mr-2">
                 <router-link
                   class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-transparent p-3"
                   to="/admin/experiences"
@@ -93,14 +93,12 @@ import AdminLogin from '@/components/AdminLogin.vue'
 import { useAuthStore } from '@/stores/auth-store'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { ref } from 'vue'
-import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { onClickOutside } from '@vueuse/core'
+import { breakpointsTailwind, useBreakpoints, onClickOutside } from '@vueuse/core'
 const authStore = useAuthStore()
 
 const adminLogin = ref(null)
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
-breakpoints
 const isDesktop = breakpoints.greater('sm')
 const showMenu = ref(false)
 const showLogin = ref(false)
