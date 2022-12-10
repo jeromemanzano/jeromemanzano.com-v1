@@ -71,7 +71,10 @@
               class="px-6 py-3"
               @click="removeSkillFromExperience(skill.id)"
             >
-              <XMarkIcon class="h-4 text-center" />
+              <font-awesome-icon
+                icon="fa-solid fa-xmark"
+                class="h-4 text-center"
+              />
             </button>
           </div>
         </template>
@@ -107,7 +110,10 @@
             class="px-6"
             @click="removeRoleFromExperience(role)"
           >
-            <XMarkIcon class="h-6" />
+            <font-awesome-icon
+              icon="fa-solid fa-xmark"
+              class="h-6 text-center"
+            />
           </button>
         </div>
       </template>
@@ -149,13 +155,13 @@
 import type { IExperienceModel } from '@/stores/experience/experience-model'
 import { computed, ref, reactive } from 'vue'
 import InputField from '../InputField.vue'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import { useExperienceStore } from '@/stores/experience/experience-store'
 import { useCompanyStore } from '@/stores/company/company-store'
 import { useSkillStore } from '@/stores/skill/skill-store'
 import type { ISkillModel } from '@/stores/skill/skill-model'
 import type { ICompanyModel } from '@/stores/company/company-model'
-import { XMarkIcon } from '@heroicons/vue/24/outline'
 
 const props = defineProps<{
   experience: IExperienceModel

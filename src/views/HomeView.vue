@@ -21,7 +21,7 @@
         >
           <template v-slot:body>
             <ol
-              class="flex flex-col justify-center gap-6 sm:gap-0 sm:flex-row sm:justify-end sm:items-center uppercase p-8 sm:p-4"
+              class="flex flex-col justify-center gap-6 sm:gap-0 sm:flex-row sm:justify-end sm:items-center uppercase sm:p-4"
             >
               <li class="block sm:transition from:opacity-0 from:translate-y-5 delay-[1s] duration-500">
                 <a

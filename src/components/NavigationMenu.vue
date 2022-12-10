@@ -8,10 +8,13 @@
     >
       <button
         type="button"
-        class="sm:hidden"
+        class="sm:hidden flex justify-start"
         @click="emits('close')"
       >
-        <XMarkIcon class="h-10 hover:text-cyan-400" />
+        <font-awesome-icon
+          icon="fa-solid fa-xmark"
+          class="h-10 w-10 hover:text-cyan-400"
+        />
       </button>
       <header id="modalTitle">
         <slot name="header"></slot>
@@ -34,7 +37,7 @@
 <script setup lang="ts">
 import { onClickOutside } from '@vueuse/core'
 import { ref } from 'vue'
-import { XMarkIcon } from '@heroicons/vue/24/outline'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 const emits = defineEmits(['close'])
 const container = ref(null)
