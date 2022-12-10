@@ -14,14 +14,11 @@ export const connectToDatabase = () => {
   console.log('creating new database connection')
 
   return mongoose
-    .connect(
-      `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}.1omo63b.mongodb.net/?retryWrites=true&w=majority`,
-      {
-        serverApi: ServerApiVersion.v1,
-        useUnifiedTopology: true,
-        useNewUrlParser: true,
-      }
-    )
+    .connect(process.env.DB_CONNECTION_STRING, {
+      serverApi: ServerApiVersion.v1,
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+    })
     .then(db => {
       isConnected = db.connections[0].readyState
     })
