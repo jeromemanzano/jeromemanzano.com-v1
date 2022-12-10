@@ -84,7 +84,7 @@
       </div>
     </nav>
   </header>
-  <router-view class="sm:px-20 mx-auto mt-32"></router-view>
+  <router-view class="px-5 sm:px-20 mx-auto mt-24"></router-view>
 </template>
 
 <script setup lang="ts">

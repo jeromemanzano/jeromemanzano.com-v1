@@ -1,7 +1,7 @@
 <template>
   <form
     v-on:submit="updateCompany()"
-    class="grid md:grid-cols-2 gap-2"
+    class="grid sm:grid-cols-2 gap-2"
   >
     <input-field
       label="Name"
@@ -25,13 +25,13 @@
     >
       <button
         type="submit"
-        class="fill-hover mt-2 md:mt-6"
+        class="fill-hover mt-2 sm:mt-6"
       >
         UPDATE
       </button>
       <button
         type="button"
-        class="fill-hover mt-2 md:mt-6"
+        class="fill-hover mt-2 sm:mt-6"
         @click="deleteCompany()"
       >
         DELETE
@@ -43,7 +43,7 @@
     >
       <button
         type="button"
-        class="fill-hover mt-2 md:mt-6"
+        class="fill-hover mt-2 sm:mt-6"
         @click="createCompany()"
       >
         CREATE

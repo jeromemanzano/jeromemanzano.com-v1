@@ -4,7 +4,7 @@
   <div v-else-if="skillStore.error"></div>
   <div
     v-else-if="skillStore.skills"
-    class="grid gap-6 md:gap-4"
+    class="grid gap-6 md:gap-4 grow"
   >
     <SkillEditListItem
       :skill="newSkill"

@@ -4,7 +4,7 @@
   <div v-else-if="companyStore.error"></div>
   <div
     v-else-if="companyStore.companies"
-    class="grid gap-6 md:gap-4"
+    class="grid gap-6 sm:gap-4 grow"
   >
     <CompanyEditListItem :company="newCompany" />
     <CompanyEditListItem
