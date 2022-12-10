@@ -7,7 +7,7 @@
       About
     </h2>
     <div
-      class="flex flex-col text-sm md:text-lg font-roboto text-secondaryTextColor transition from:opacity-0 from:translate-x-5 duration-1000 delay-500 max-w-3xl mx-auto gap-5"
+      class="flex flex-col text-sm md:text-lg font-roboto transition from:opacity-0 from:translate-x-5 duration-1000 delay-500 max-w-3xl mx-auto gap-5"
     >
       <p>
         I&#39;m a software developer based in the Philippines. I work with agencies, startups, and businesses of all

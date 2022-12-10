@@ -8,7 +8,7 @@
       v-model="experience.position"
     />
     <label class="flex flex-col">
-      <span class="text-textColor">Company</span>
+      <span class="text-slate-200">Company</span>
       <select
         v-if="useCompanyStore().companies"
         id="company"
@@ -36,7 +36,7 @@
     />
 
     <div class="col-span-2">
-      <label class="block text-textColor">Skills</label>
+      <label class="block text-slate-200">Skills</label>
       <div class="flex flex-wrap gap-2">
         <select
           id="remainingSkills"
@@ -64,7 +64,7 @@
           v-for="(skill, index) in experience.skills"
           :key="index"
         >
-          <div class="pl-6 flex border-[1px] border-borderColor">
+          <div class="pl-6 flex border-[1px] border-neutral-300">
             <span class="self-center">{{ skill.name }}</span>
             <button
               type="button"
@@ -79,7 +79,7 @@
     </div>
 
     <label class="col-span-2 flex flex-col">
-      <span class="text-textColor">Roles</span>
+      <span class="text-slate-200">Roles</span>
       <div class="flex gap-2">
         <input
           type="text"
@@ -98,7 +98,7 @@
         v-for="(role, index) in experience.roles"
         :key="index"
       >
-        <div class="py-1 px-2 mt-2 text-textColor flex">
+        <div class="py-1 px-2 mt-2 text-slate-200 flex">
           <span class="grow">{{ role }}</span>
           <!-- TODO: change this icon -->
 

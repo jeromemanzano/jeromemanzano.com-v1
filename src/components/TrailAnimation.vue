@@ -12,7 +12,7 @@
     <li
       v-for="(item, index) in trails"
       :key="index"
-      class="opacity-0 px-4 relative font-extrabold text-mainBgColor overflow-hidden last:overflow-visible"
+      class="opacity-0 px-4 relative font-extrabold text-neutral-900 overflow-hidden last:overflow-visible"
       :style="item"
     >
       {{ text }}

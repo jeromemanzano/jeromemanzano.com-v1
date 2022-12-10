@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-mainBgColor flex items-center justify-center text-mainColor text-4xl sm:text-6xl uppercase font-bold glitch"
+    class="bg-neutral-900 flex items-center justify-center text-yellow-400 text-4xl sm:text-6xl uppercase font-bold glitch"
   >
     Loading...
   </div>
@@ -14,7 +14,7 @@
   --slice-3: inset(10% -6px 85% 0);
   --slice-4: inset(40% -6px 43% 0);
   --slice-5: inset(80% -6px 5% 0);
-  @apply text-mainColor;
+  @apply text-yellow-400;
 
   animation: glitch 3s infinite;
 }
@@ -23,7 +23,7 @@
   font: inherit;
   content: 'Loading...';
   background-color: inherit;
-  @apply text-secondaryColor;
+  @apply text-cyan-400;
   animation: glitch 3s infinite;
   position: absolute;
 }
@@ -33,7 +33,7 @@
   position: absolute;
   font: inherit;
   background-color: inherit;
-  @apply text-contentActiveBgColor;
+  @apply text-red-700;
   animation: glitch 3s infinite;
 }
 @keyframes glitch {

@@ -1,6 +1,6 @@
 <template>
   <label class="flex flex-col">
-    <span class="text-textColor">{{ label }}</span>
+    <span class="text-slate-200">{{ label }}</span>
     <input
       :type="type"
       :value="modelValue"

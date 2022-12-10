@@ -1,5 +1,5 @@
 <template>
-  <header class="block fixed top-0 left-0 w-full bg-mainBgColor z-10">
+  <header class="block fixed top-0 left-0 w-full bg-neutral-900 z-10">
     <nav class="flex justify-end">
       <button
         class="sm:hidden p-4 self-end justify-end content-end items-end justify-items-end place-self-end"
@@ -21,21 +21,21 @@
         >
           <template v-slot:body>
             <ol
-              class="flex flex-col justify-center gap-6 sm:gap-0 sm:flex-row sm:justify-end sm:items-center uppercase p-8 sm:p-4 text-secondaryTextColor"
+              class="flex flex-col justify-center gap-6 sm:gap-0 sm:flex-row sm:justify-end sm:items-center uppercase p-8 sm:p-4"
             >
               <li class="block sm:transition from:opacity-0 from:translate-y-5 delay-[1s] duration-500">
                 <a
-                  class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-transparent py-3 sm:p-3"
+                  class="hover:text-cyan-400 border-b-[1px] hover:border-cyan-400 border-b-transparent py-3 sm:p-3"
                   :href="'#about-section'"
-                  :class="{ 'text-secondaryColor': currentSectionId === 'about-section' }"
+                  :class="{ 'text-cyan-400': currentSectionId === 'about-section' }"
                   >About</a
                 >
               </li>
               <li class="block sm:transition from:opacity-0 from:translate-y-5 delay-[1.2s] duration-500 mr-2">
                 <a
-                  class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-transparent py-3 sm:p-3"
+                  class="hover:text-cyan-400 border-b-[1px] hover:border-cyan-400 border-b-transparent py-3 sm:p-3"
                   :href="'#experiences-section'"
-                  :class="{ 'text-secondaryColor': currentSectionId === 'experiences-section' }"
+                  :class="{ 'text-cyan-400': currentSectionId === 'experiences-section' }"
                   >Experience</a
                 >
               </li>
@@ -43,7 +43,7 @@
                 class="overflow-hidden py-3 sm:transition from:opacity-0 from:translate-y-5 delay-[1.4s] duration-500"
               >
                 <a
-                  class="border-[1px] border-borderColor text-textColor px-4 py-2 fill-hover before:content-['Download']"
+                  class="border-[1px] border-neutral-300 text-slate-200 px-4 py-2 fill-hover before:content-['Download']"
                   :href="'https://www.jeromemanzano.com/resume.pdf'"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -65,14 +65,14 @@
     <ContactSection />
   </div>
   <ul
-    class="text-2xl sm:flex-col sm:items-stretch sm:justify-end sm:bottom-[10%] sm:top-0 sm:fixed flex text-secondaryTextColor absolute left-0 transition from:opacity-0 from:-translate-x-5 duration-500 sm:delay-[1.6s] w-full sm:w-auto justify-center bottom-12"
+    class="text-2xl sm:flex-col sm:items-stretch sm:justify-end sm:bottom-[10%] sm:top-0 sm:fixed flex absolute left-0 transition from:opacity-0 from:-translate-x-5 duration-500 sm:delay-[1.6s] w-full sm:w-auto justify-center bottom-12"
   >
     <li class="sm:mb-5">
       <a
         :href="profile.linkedInUrl"
         aria-label="LinkedIn"
         rel="noopener noreferrer"
-        class="sm:border-[1px] border-borderColor sm:hover:text-contentTextColor p-2 sm:fill-hover"
+        class="sm:border-[1px] border-neutral-300 sm:hover:text-neutral-900 p-2 sm:fill-hover"
         target="_blank"
       >
         <font-awesome-icon
@@ -86,7 +86,7 @@
         :href="profile.githubUrl"
         aria-label="Github"
         rel="noopener noreferrer"
-        class="sm:border-[1px] border-borderColor sm:hover:text-contentTextColor p-2 sm:fill-hover"
+        class="sm:border-[1px] border-neutral-300 sm:hover:text-neutral-900 p-2 sm:fill-hover"
         target="_blank"
       >
         <font-awesome-icon
@@ -95,7 +95,7 @@
       /></a>
     </li>
   </ul>
-  <footer class="flex text-center justify-center absolute left-0 right-0 bottom-0 text-secondaryTextColor">
+  <footer class="flex text-center justify-center absolute left-0 right-0 bottom-0">
     <a
       href="https://github.com/jeromemanzano/jerome-manzano-website"
       aria-label="Website repository"

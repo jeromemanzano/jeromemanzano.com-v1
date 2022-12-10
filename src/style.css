@@ -23,12 +23,12 @@
   [multiple],
   textarea,
   select {
-    @apply h-full border-borderColor focus:border-activeBorderColor focus:ring-activeBorderColor bg-mainBgColor text-textColor;
+    @apply h-full border-neutral-300 focus:border-cyan-400 focus:ring-cyan-400 bg-neutral-900 text-slate-200;
   }
 
   [type='checkbox'],
   [type='radio'] {
-    @apply border-borderColor text-activeBorderColor focus:ring-activeBorderColor;
+    @apply border-neutral-300 text-cyan-400 focus:ring-cyan-400;
   }
 
   .html,
@@ -43,7 +43,7 @@
   }
 
   section h2 {
-    @apply text-mainColor 
+    @apply text-yellow-400 
     font-bold 
     text-3xl 
     md:text-4xl 
@@ -58,11 +58,11 @@
   }
 
   button.fill-hover {
-    @apply px-6 py-2 border-[1px] border-borderColor;
+    @apply px-6 py-2 border-[1px] border-neutral-300;
   }
 
   button.fill-hover:hover {
-    @apply text-contentTextColor;
+    @apply text-neutral-900;
   }
 
   button::before {
@@ -70,12 +70,12 @@
   }
 
   .fill-hover:hover {
-    @apply border-activeBorderColor;
+    @apply border-cyan-400;
   }
 
   .fill-hover::before {
     content: '';
-    @apply text-contentTextColor;
+    @apply text-neutral-900;
   }
 
   .fill-hover:not(.active)::before {
@@ -102,7 +102,7 @@
     width: 100%;
     height: 100%;
 
-    @apply bg-activeBorderColor;
+    @apply bg-cyan-400;
   }
 
   .fill-hover:hover::before {

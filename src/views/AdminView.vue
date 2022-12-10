@@ -22,32 +22,32 @@
         >
           <template v-slot:body>
             <ol
-              class="flex flex-col sm:flex-none gap-6 sm:flex-row items-start sm:items-center justify-center uppercase py-4 text-secondaryTextColor"
+              class="flex flex-col sm:flex-none gap-6 sm:flex-row items-start sm:items-center justify-center uppercase py-4"
             >
               <li class="block">
                 <a
-                  class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-transparent p-3"
+                  class="hover:text-cyan-400 border-b-[1px] hover:border-cyan-400 border-b-transparent p-3"
                   href="/"
                   >Home</a
                 >
               </li>
               <li class="block">
                 <router-link
-                  class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-transparent p-3"
+                  class="hover:text-cyan-400 border-b-[1px] hover:border-cyan-400 border-b-transparent p-3"
                   to="/admin/skills"
                   >Skills</router-link
                 >
               </li>
               <li class="block">
                 <router-link
-                  class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-transparent p-3"
+                  class="hover:text-cyan-400 border-b-[1px] hover:border-cyan-400 border-b-transparent p-3"
                   to="/admin/companies"
                   >Companies</router-link
                 >
               </li>
               <li class="block sm:mr-2">
                 <router-link
-                  class="hover:text-secondaryColor border-b-[1px] hover:border-activeBorderColor border-b-transparent p-3"
+                  class="hover:text-cyan-400 border-b-[1px] hover:border-cyan-400 border-b-transparent p-3"
                   to="/admin/experiences"
                   >Experiences</router-link
                 >
@@ -59,7 +59,7 @@
               ref="adminLogin"
               v-show="showLogin || showMenu"
               @close="showLogin = false"
-              class="flex-none sm:absolute sm:top-20 sm:-right-5 sm:bg-[#292524] sm:p-6 sm:flex min-w-[250px] z-10"
+              class="flex-none sm:absolute sm:top-20 sm:-right-5 sm:bg-stone-800 sm:p-6 sm:flex min-w-[250px] z-10"
             />
           </template>
         </navigation-menu>
@@ -108,6 +108,6 @@ onClickOutside(adminLogin, () => (showLogin.value = false))
 
 <style scoped>
 .router-link-exact-active {
-  @apply text-secondaryColor;
+  @apply text-cyan-400;
 }
 </style>

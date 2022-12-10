@@ -6,7 +6,7 @@
     Logged in as {{ authStore.user?.displayName }}
     <button
       @click="logout()"
-      class="block fill-hover px-6 py-4 border-[1px] border-mainBgColor hover:text-secondaryColor"
+      class="block fill-hover px-6 py-4 border-[1px] border-neutral-900 hover:text-cyan-400"
     >
       Sign out
     </button>
@@ -17,7 +17,7 @@
   >
     <button
       @click="login()"
-      class="fill-hover px-6 py-4 border-[1px] border-mainBgColor"
+      class="fill-hover px-6 py-4 border-[1px] border-neutral-900"
     >
       Sign in with Google
     </button>

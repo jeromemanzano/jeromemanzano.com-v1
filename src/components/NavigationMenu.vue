@@ -11,7 +11,7 @@
         class="sm:hidden"
         @click="emits('close')"
       >
-        <XMarkIcon class="h-10 hover:text-secondaryColor" />
+        <XMarkIcon class="h-10 hover:text-cyan-400" />
       </button>
       <header id="modalTitle">
         <slot name="header"></slot>
